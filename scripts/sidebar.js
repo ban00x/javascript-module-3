@@ -13,16 +13,19 @@ async function createSidebar(node, containerName, linkCallback) {
   `
   );
   const html = `<div class="py-4 artboard artboard-demo bg-base-200">
-              <div class="flex" id="${containerName}">
-              <div class="flex-1">
-            <ul class="menu py-3 shadow-lg bg-base-100 rounded-box" id=${listId}>
-              <li class="menu-title"></li>
-                <span> Episodes list </span>
-              </li>
-              ${episodesHTML.join("")}
-            </ul>
-            <button class="btn btn-outline mt-6" id=${buttonId}>Load more</button> 
-        </div>
+    <div class="flex" id="${containerName}">
+      <div class="flex-1">
+        <ul class="menu p-4 shadow-lg bg-base-100 rounded-box" id=${listId}>
+          <li class="menu-title"></li>
+          <p class="text-2xl ... bg-gray-200 p-4 font-bold...">Episodes list</p>
+            
+          </li>
+          ${episodesHTML.join("")}
+        </ul>
+        <button class="btn btn-outline mt-62"id=${buttonId}>Load More</button>
+      </div>
+    </div
+  </div>
   `;
   const newDiv = document.createElement("div");
   newDiv.innerHTML = html;
@@ -43,7 +46,8 @@ async function createSidebar(node, containerName, linkCallback) {
     if (episodes && episodes.length > 0) {
       page = page + 1;
       const episodesHTML = episodes.map(
-        (episode) => `<a id="link-${episode.id}">Episode ${episode.id} </a>`
+        (episode) =>
+          `<a class="pointer-events-auto border border-red-500 focus:border-blue-500 ... p-3 m-3 font-semibold" id="link-${episode.id}">Episode ${episode.id} </a>`
       );
       episodesHTML.forEach((episodeHTML) => {
         const list = document.getElementById(listId);

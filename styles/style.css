@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Tauri&display=swap");
+@font-face {
+  font-family: Rick;
+  src: url(fonts/get_schwifty.ttf);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.header {
+  text-align: center;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  font-size: 8rem;
+  font-family: "Rick";
+}
